@@ -2,12 +2,12 @@ import React from "react";
 
 const cours = [
     {
-        id:"1",
+        id:"2",
         title:"First course",
         createdAt:"20.02.2002"
     },
     {
-        id:"2",
+        id:"1",
         title:"Second course",
         createdAt:"20.02.2002"
     }
@@ -17,6 +17,27 @@ const cours = [
 class Courses extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            courses: cours
+        }
+    }
+
+    sortCoursesBy(e,key) {
+        let newCourses;
+        if (e.target.classList.contains("ASC")) {
+            newCourses = this.state.courses.sort((a,b)=>a[key]>b[key]?-1:1);
+            e.target.classList.add("sortButtonDESC");
+            e.target.classList.remove("ASC");
+        }
+        else {
+            newCourses = this.state.courses.sort((a,b)=>a[key]>b[key]?1:-1);
+            e.target.classList.add("chosen");
+            e.target.classList.add("ASC");
+            e.target.classList.remove("sortButtonDESC");
+        }
+        this.setState({
+            courses:newCourses
+        })
     }
 
     render() {
@@ -25,11 +46,12 @@ class Courses extends React.Component {
                 <table>
                     <tr>
                         <th style={{width:"5vw"}}></th>
-                        <th style={{width:"5vw"}}>id</th>
-                        <th>Название</th>
-                        <th>Создан</th>
+                        <th onClick={(e)=>this.sortCoursesBy(e,"id")} className='sortButton' style={{width:"5vw"}}>id</th>
+                        <th onClick={(e)=>this.sortCoursesBy(e,"title")} className='sortButton'>Название</th>
+                        <th onClick={(e)=>this.sortCoursesBy(e,"createdAt")} className='sortButton'>Создан</th>
+                        <th style={{width:"10vw"}}></th>
                     </tr>
-                    {cours.map((course)=>
+                    {this.state.courses.map((course)=>
                         <tr key={course.id}>
                             <td>
                                 <input type="checkbox"></input>
@@ -37,6 +59,9 @@ class Courses extends React.Component {
                             <td>{course.id}</td>
                             <td>{course.title}</td>
                             <td>{course.createdAt}</td>
+                            <td>
+                                Просмотр
+                            </td>
                         </tr>                    
                     )}
                 </table>
