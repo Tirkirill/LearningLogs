@@ -23,16 +23,20 @@ table {
         position:relative;
         width:0px;
         height:0px;
+        content:"";
+    }
+
+    th.sortASC::before {
         top:30px;
         right:15px;
-        content:"";
         border: 5px solid transparent;
         border-top-color: rgb(124, 123, 125);
     }
 
-    th.sortButtonDESC::before  {
+    th.sortDESC::before  {
         top:25px;
-        border-top-color: transparent;
+        right:15px;
+        border: 5px solid transparent;
         border-bottom-color: rgb(124, 123, 125);
     }
 
