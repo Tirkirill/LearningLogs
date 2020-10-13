@@ -1,7 +1,7 @@
 import React from "react";
-import Courses from "./components/main/courses.jsx";
+import Courses from "./components/main/courses/courses.jsx";
 import Navbar from "./components/main/navbar.jsx";
-import Users from "./components/main/users.jsx";
+import Users from "./components/main/users/users.jsx";
 
 import {
     BrowserRouter as Router,
@@ -35,7 +35,29 @@ const courses = [
         createdAt:new Date(2002, 2,3),
         studentsNumber:12
     }
-]
+];
+const users = [
+    {
+        id:"2",
+        name:"Jhon",
+        createdAt:new Date(2002, 2,2)
+    },
+    {
+        id:"1",
+        name:"James",
+        createdAt:new Date(2002, 2,2)
+    },
+    {
+        id:"3",
+        name:"Kirill",
+        createdAt:new Date(2002, 2,2)
+    },
+    {
+        id:"4",
+        name:"Aaron",
+        createdAt:new Date(2002, 2,2)
+    }
+];
 
 
 class App extends React.Component {
@@ -53,7 +75,7 @@ class App extends React.Component {
                     <Courses values={courses}/>
                 </Route>
                 <Route exact path="/users" history={history}>
-                    <Users/>
+                    <Users values={users}/>
                 </Route>
             </Router>
         )

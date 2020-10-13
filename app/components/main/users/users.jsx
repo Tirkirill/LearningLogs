@@ -1,10 +1,9 @@
 import React from "react";
-import SortableTable from "./sortableTable.jsx";
+import SortableTable from "../../sortableTable.jsx";
+import dateFormat from "../../../functions/dateFormat";
 
 
-
-
-class Courses extends SortableTable {
+class Users extends SortableTable {
     constructor(props) {
         super(props);
     }
@@ -16,24 +15,20 @@ class Courses extends SortableTable {
                     <tr>
                         <th style={{width:"2vw"}}></th>
                         <th onClick={(e)=>this.sortValuesBy(e,"id")} className='sortButton sortASC' style={{width:"5vw"}}>id</th>
-                        <th onClick={(e)=>this.sortValuesBy(e,"title")} className='sortButton sortASC'>Название</th>
+                        <th onClick={(e)=>this.sortValuesBy(e,"name")} className='sortButton sortASC'>Название</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"createdAt")} className='sortButton sortASC'>Создан</th>
-                        <th onClick={(e)=>this.sortValuesBy(e,"studentsNumber")}style={{width:"5vw"}}  className='sortButton sortASC'>Студентов</th>
                         <th style={{width:"10vw"}}></th>
                     </tr>
-                    {this.state.values.map((course)=>
-                        <tr key={course.id}>
+                    {this.state.values.map((user)=>
+                        <tr key={user.id}>
                             <td>
                                 <input type="checkbox"></input>
                             </td>
-                            <td>{course.id}</td>
-                            <td>{course.title}</td>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
                             <td>
-                                {(course.createdAt.getDate() < 10? "0"+course.createdAt.getDate():course.createdAt.getDate()) +"." + 
-                                (course.createdAt.getMonth()+1 < 10? "0"+(course.createdAt.getMonth()+1):(course.createdAt.getMonth()+1)) + "." 
-                                + course.createdAt.getFullYear()}
+                                {dateFormat(user.createdAt)}
                             </td>
-                            <td>{course.studentsNumber}</td>
                             <td>
                                 Просмотр
                             </td>
@@ -45,4 +40,4 @@ class Courses extends SortableTable {
     }
 }
 
-export default Courses;
+export default Users;
