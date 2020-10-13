@@ -7,7 +7,7 @@ class Courses extends SortableTable {
     constructor(props) {
         super(props);
     }
-
+    
     render() {
         return(
             <div className="mainContainer">
@@ -23,7 +23,7 @@ class Courses extends SortableTable {
                     {this.state.values.map((course)=>
                         <tr key={course.id}>
                             <td>
-                                <input type="checkbox"></input>
+                                <input type="checkbox" id={course.id}></input>
                             </td>
                             <td>{course.id}</td>
                             <td>{course.title}</td>

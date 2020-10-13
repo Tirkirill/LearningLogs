@@ -15,7 +15,7 @@ class Users extends SortableTable {
                     <tr>
                         <th style={{width:"2vw"}}></th>
                         <th onClick={(e)=>this.sortValuesBy(e,"id")} className='sortButton sortASC' style={{width:"5vw"}}>id</th>
-                        <th onClick={(e)=>this.sortValuesBy(e,"name")} className='sortButton sortASC'>Название</th>
+                        <th onClick={(e)=>this.sortValuesBy(e,"name")} className='sortButton sortASC'>Имя</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"createdAt")} className='sortButton sortASC'>Создан</th>
                         <th style={{width:"10vw"}}></th>
                     </tr>

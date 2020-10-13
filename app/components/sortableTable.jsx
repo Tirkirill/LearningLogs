@@ -8,6 +8,14 @@ class SortableTable extends React.Component {
         }
     } 
 
+    deleteValueByIDs(ids) {
+        let newValues = this.state.values.filter((elem)=> !ids.includes(elem.id));
+        this.setState({
+            values: newValues
+        });
+    }
+
+
     sortValuesBy(e, key) {
         let newValues;
         if (e.target.classList.contains("sortASC") 
