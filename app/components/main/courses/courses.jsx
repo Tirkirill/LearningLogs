@@ -2,6 +2,9 @@ import React from "react";
 import SortableTable from "../../sortableTable.jsx";
 import dateFormat from "../../../functions/dateFormat";
 
+import {
+    NavLink
+} from "react-router-dom";
 
 class Courses extends SortableTable {
     constructor(props) {
@@ -36,7 +39,7 @@ class Courses extends SortableTable {
                             </td>
                             <td>{course.studentsNumber}</td>
                             <td>
-                                Просмотр
+                                <NavLink to={"course/"+course.id}>Просмотр</NavLink>
                             </td>
                         </tr>                    
                     )}

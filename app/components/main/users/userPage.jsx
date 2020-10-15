@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from 'react-router-dom'
 
-class CoursePage extends React.Component {
+class UserPage extends React.Component {
     constructor(props) {
         super(props);
         const {match} = this.props
@@ -13,9 +13,9 @@ class CoursePage extends React.Component {
 
     render() {
         return(
-            <div className='mainContainer'>Страница курса c id - {this.state.id}!</div>
+            <div className='mainContainer'>Страница пользователя c id - {this.state.id}!</div>
         )
     }
 }
 
-export default withRouter(CoursePage);
+export default withRouter(UserPage);

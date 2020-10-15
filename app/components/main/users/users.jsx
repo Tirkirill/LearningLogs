@@ -1,7 +1,9 @@
 import React from "react";
 import SortableTable from "../../sortableTable.jsx";
 import dateFormat from "../../../functions/dateFormat";
-
+import {
+    NavLink
+} from "react-router-dom";
 
 class Users extends SortableTable {
     constructor(props) {
@@ -36,7 +38,7 @@ class Users extends SortableTable {
                                 {dateFormat(user.createdAt)}
                             </td>
                             <td>
-                                Просмотр
+                                <NavLink to={"user/"+user.id}>Просмотр</NavLink>
                             </td>
                         </tr>                    
                     )}
