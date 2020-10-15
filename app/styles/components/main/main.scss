@@ -6,10 +6,10 @@ table {
     th {
         font-size:30px;
         width:12vw;
-        background-color:rgb(231,232,232);
+        background-color:$lightgray;
         padding-left:30px;
         padding-right:20px;
-        color: rgb(124, 123, 125);
+        color:$gray;
         border-bottom: 2px solid rgb(220, 220, 220); 
         text-align:left;
     }
@@ -30,14 +30,14 @@ table {
         top:30px;
         right:15px;
         border: 5px solid transparent;
-        border-top-color: rgb(124, 123, 125);
+        border-top-color:$gray;
     }
 
     th.sortDESC::before  {
         top:25px;
         right:15px;
         border: 5px solid transparent;
-        border-bottom-color: rgb(124, 123, 125);
+        border-bottom-color:$gray;
     }
 
     td {
@@ -48,4 +48,9 @@ table {
         padding-bottom: 15px;
         border:2px solid rgb(220, 220, 220);
     }
+
+    tr.important td {
+        background-color: lightyellow;
+    }
 }
+

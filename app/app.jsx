@@ -2,6 +2,7 @@ import React from "react";
 import Courses from "./components/main/courses/courses.jsx";
 import Navbar from "./components/main/navbar.jsx";
 import Users from "./components/main/users/users.jsx";
+import CoursePage from "./components/main/courses/coursePage.jsx";
 
 import {
     BrowserRouter as Router,
@@ -76,6 +77,9 @@ class App extends React.Component {
                 </Route>
                 <Route exact path="/users" history={history}>
                     <Users values={users}/>
+                </Route>
+                <Route exact path="/course/:id" history={history}>
+                    <CoursePage/>
                 </Route>
             </Router>
         )

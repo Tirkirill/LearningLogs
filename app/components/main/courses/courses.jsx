@@ -11,6 +11,10 @@ class Courses extends SortableTable {
     render() {
         return(
             <div className="mainContainer">
+                <div className='commandPanel'>
+                    <button className='commandButton' onClick={()=>this.deleteValueByIDs(this.state.selectedValuesIds)}>Удалить</button>
+                    <button className='commandButton' onClick={()=>this.makeImportantByIDs(this.state.selectedValuesIds)}>Важные</button>
+                </div>
                 <table>
                     <tr>
                         <th style={{width:"2vw"}}></th>
@@ -21,9 +25,9 @@ class Courses extends SortableTable {
                         <th style={{width:"10vw"}}></th>
                     </tr>
                     {this.state.values.map((course)=>
-                        <tr key={course.id}>
+                        <tr key={course.id} id={"row"+course.id}>
                             <td>
-                                <input type="checkbox" id={course.id}></input>
+                                <input type="checkbox"  onChange={this.onChangeHandler} id={"choose"+course.id}></input>
                             </td>
                             <td>{course.id}</td>
                             <td>{course.title}</td>

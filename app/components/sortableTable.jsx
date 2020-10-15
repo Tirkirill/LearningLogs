@@ -4,15 +4,51 @@ class SortableTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            values: props.values
+            values: props.values,
+            selectedValuesIds:[]
         }
+        this.onChangeHandler = this.onChangeHandler.bind(this);
     } 
 
     deleteValueByIDs(ids) {
         let newValues = this.state.values.filter((elem)=> !ids.includes(elem.id));
         this.setState({
+            selectedValuesIds:[],
             values: newValues
         });
+    }
+
+    selectValue(id) {
+        let newSelectedValues = this.state.selectedValuesIds.concat(id);
+        this.setState({
+            selectedValuesIds: newSelectedValues
+        });
+    }
+
+    deselectValue(id) {
+        let newSelectedValues = this.state.selectedValuesIds.filter((elem)=> elem!=id);
+        this.setState({
+            selectedValuesIds: newSelectedValues
+        });
+        
+    }
+
+    makeImportantByIDs(ids) {
+        for (let id of ids) {
+            let row = document.querySelector("#row"+id);
+            row.classList.toggle("important");
+        }
+    }
+
+    onChangeHandler(e) {
+        let checkBox = e.target;
+        let id = checkBox.id.replace("choose", "");
+        if (checkBox.checked) {
+            this.selectValue(id);
+        }
+        else {
+            this.deselectValue(id);
+        }
     }
 
 
