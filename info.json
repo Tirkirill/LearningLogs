@@ -1,0 +1,28 @@
+{
+    "courses":[
+        {
+            "id":"2",
+            "title":"Second course",
+            "createdAt":"2001-12-22",
+            "studentsNumber":2
+        },
+        {
+            "id":"1",
+            "title":"First course",
+            "createdAt":"2004-12-02",
+            "studentsNumber":2
+        },
+        {
+            "id":"3",
+            "title":"New course",
+            "createdAt":"2003-12-02",
+            "studentsNumber":2
+        },
+        {
+            "id":"4",
+            "title":"NEwNEW! course",
+            "createdAt":"2005-12-02",
+            "studentsNumber":12
+        }
+    ]
+}

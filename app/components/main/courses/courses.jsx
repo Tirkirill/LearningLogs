@@ -2,6 +2,7 @@ import React from "react";
 import SortableTable from "../../sortableTable.jsx";
 import dateFormat from "../../../functions/dateFormat";
 import CommandPanel from "../commandPanel.jsx";
+import * as API from "../../../backend/API";
 
 import {
     NavLink
@@ -11,7 +12,7 @@ class Courses extends SortableTable {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return(
             <div className="mainContainer">
