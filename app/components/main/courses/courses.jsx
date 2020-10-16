@@ -1,6 +1,7 @@
 import React from "react";
 import SortableTable from "../../sortableTable.jsx";
 import dateFormat from "../../../functions/dateFormat";
+import CommandPanel from "../commandPanel.jsx";
 
 import {
     NavLink
@@ -14,10 +15,10 @@ class Courses extends SortableTable {
     render() {
         return(
             <div className="mainContainer">
-                <div className='commandPanel'>
-                    <button className='commandButton' onClick={()=>this.deleteValueByIDs(this.state.selectedValuesIds)}>Удалить</button>
-                    <button className='commandButton' onClick={()=>this.makeImportantByIDs(this.state.selectedValuesIds)}>Важные</button>
-                </div>
+                <CommandPanel 
+                    Delete={()=>this.deleteValueByIDs(this.state.selectedValuesIds)}
+                    Important={()=>this.makeImportantByIDs(this.state.selectedValuesIds)}
+                />
                 <table>
                     <tr>
                         <th style={{width:"2vw"}}></th>
