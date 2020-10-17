@@ -24,5 +24,27 @@
             "createdAt":"2005-12-02",
             "studentsNumber":12
         }
+    ],
+    "users":[
+        {
+            "id":"2",
+            "name":"Jhon",
+            "createdAt":"2001-12-22"
+        },
+        {
+            "id":"1",
+            "name":"James",
+            "createdAt":"2003-11-22"
+        },
+        {
+            "id":"3",
+            "name":"Kirill",
+            "createdAt":"2004-12-25"
+        },
+        {
+            "id":"4",
+            "name":"Aaron",
+            "createdAt":"2007-12-15"
+        }
     ]
 }

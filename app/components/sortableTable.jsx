@@ -4,7 +4,6 @@ class SortableTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            values: props.values,
             selectedValuesIds:[]
         }
         this.onChangeHandler = this.onChangeHandler.bind(this);

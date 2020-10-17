@@ -1,20 +1,41 @@
 import React from "react";
 import SortableTable from "../../sortableTable.jsx";
 import CommandPanel from "../commandPanel.jsx";
+import * as API from "../../../backend/API";
 
 import dateFormat from "../../../functions/dateFormat";
 import {
     NavLink
 } from "react-router-dom";
+import Loading from "../../loading/loading.jsx";
 
 class Users extends SortableTable {
     constructor(props) {
         super(props);
     }
 
+    getUsers() {
+        API.fetchUsers().then(function(result) {
+            return result.json();
+        }).then((result)=> {
+                for (let user of result) {
+                    user.createdAt = new Date(user.createdAt);
+                }
+                this.setState({
+                    values:result
+                })
+            }
+        )
+    }
 
+    componentDidMount() {
+        this.getUsers();
+    }
 
     render() {
+        if (!this.state.values) {
+            return <Loading/>
+        }
         return(
             <div className="mainContainer">
                 <CommandPanel 

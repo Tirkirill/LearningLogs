@@ -7,13 +7,36 @@ import * as API from "../../../backend/API";
 import {
     NavLink
 } from "react-router-dom";
+import Loading from "../../loading/loading.jsx";
 
 class Courses extends SortableTable {
     constructor(props) {
         super(props);
     }
 
+    componentDidMount() {
+        this.getCourses();
+    }
+
+    getCourses() {
+        API.fetchCourses().then(function(result) {
+            return result.json();
+        }).then((result)=> {
+                for (let course of result) {
+                    course.createdAt = new Date(course.createdAt);
+                }
+                this.setState({
+                    values:result
+                })
+            }
+        )
+    }
+
+
     render() {
+        if (!this.state.values) {
+            return <Loading/>
+        }
         return(
             <div className="mainContainer">
                 <CommandPanel 
