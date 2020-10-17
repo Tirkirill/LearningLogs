@@ -7,3 +7,7 @@ export function fetchCourses() {
 export function fetchUsers() {
     return fetch(endpoint + "users", {'method':'GET'});
 }
+
+export function fetchPosts(id) {
+    return fetch(endpoint + "posts?id="+id) 
+}
