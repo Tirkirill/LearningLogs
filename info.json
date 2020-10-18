@@ -1,20 +1,23 @@
 {
-  "courses": [],
-  "users": [
+  "courses": [
+    {
+      "id": "3",
+      "title": "New course",
+      "createdAt": "2003-12-02",
+      "studentsNumber": 2
+    },
     {
       "id": "2",
-      "name": "Jhon",
-      "createdAt": "2001-12-22"
-    },
+      "title": "Second course",
+      "createdAt": "2005-12-15",
+      "studentsNumber": 12
+    }
+  ],
+  "users": [
     {
       "id": "1",
       "name": "James",
       "createdAt": "2003-11-22"
-    },
-    {
-      "id": "3",
-      "name": "Kirill",
-      "createdAt": "2004-12-25"
     },
     {
       "id": "4",

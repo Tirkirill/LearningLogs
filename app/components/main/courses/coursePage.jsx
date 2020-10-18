@@ -26,7 +26,6 @@ class CoursePage extends SortableTable {
         API.fetchPosts(this.state.id).then(function(result) {
             return result.json();
         }).then((result)=> {
-                console.log("За");
                 for (let post of result) {
                     post.createdAt = new Date(post.createdAt);
                 }

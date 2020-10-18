@@ -33,7 +33,7 @@ class Courses extends SortableTable {
     }
 
     deleteValueByIDs(ids) {
-        API.fetchDeleteCourses(this.state.selectedValuesIds).then((res)=>{
+        API.fetchDeleteValues("courses", this.state.selectedValuesIds).then((res)=>{
             return res.json()
         }).then((res)=> {
             console.log(res)

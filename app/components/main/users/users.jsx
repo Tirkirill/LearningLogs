@@ -32,6 +32,15 @@ class Users extends SortableTable {
         this.getUsers();
     }
 
+    deleteValueByIDs(ids) {
+        API.fetchDeleteValues("users", this.state.selectedValuesIds).then((res)=>{
+            return res.json()
+        }).then((res)=> {
+            console.log(res)
+        });
+        super.deleteValueByIDs(ids);
+    }
+
     render() {
         if (!this.state.values) {
             return <Loading/>
