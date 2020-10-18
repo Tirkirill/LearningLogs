@@ -15,6 +15,7 @@ class CoursePage extends SortableTable {
         const {match} = this.props
         const id = match.params.id;
         this.state = {
+            ...this.state,
             id:id,
         }
     }
@@ -36,10 +37,16 @@ class CoursePage extends SortableTable {
         ) 
     }
 
+    deleteValueByIDs(ids) {
+        API.fetchDeleteValues("posts", this.state.selectedValuesIds);
+        super.deleteValueByIDs(ids);
+    }
+
     render() {
         if (!this.state.values) {
             return <Loading/>
         }
+        console.log(this.state.selectedValuesIds);
         return(
             <div className='mainContainer'>
                 <CommandPanel 
@@ -52,7 +59,6 @@ class CoursePage extends SortableTable {
                         <th onClick={(e)=>this.sortValuesBy(e,"id")} className='sortButton sortASC' style={{width:"5vw"}}>id</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"text")} className='sortButton sortASC'>Текст</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"createdAt")} className='sortButton sortASC'>Создан</th>
-                        <th style={{width:"10vw"}}></th>
                     </tr>
                     {this.state.values.map((post)=>
                         <tr key={post.id} id={"row"+post.id}>
@@ -63,9 +69,6 @@ class CoursePage extends SortableTable {
                             <td>{post.text}</td>
                             <td>
                                 {dateFormat(post.createdAt)}
-                            </td>
-                            <td>
-                                <NavLink to={"post/"+post.id}>Просмотр</NavLink>
                             </td>
                         </tr>                    
                     )}
