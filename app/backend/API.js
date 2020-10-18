@@ -9,5 +9,5 @@ export function fetchUsers() {
 }
 
 export function fetchPosts(id) {
-    return fetch(endpoint + "posts?id="+id) 
+    return fetch(endpoint + "posts?course="+id) 
 }

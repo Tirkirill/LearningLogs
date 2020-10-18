@@ -48,7 +48,6 @@ class Users extends SortableTable {
                         <th onClick={(e)=>this.sortValuesBy(e,"id")} className='sortButton sortASC' style={{width:"5vw"}}>id</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"name")} className='sortButton sortASC'>Имя</th>
                         <th onClick={(e)=>this.sortValuesBy(e,"createdAt")} className='sortButton sortASC'>Создан</th>
-                        <th style={{width:"10vw"}}></th>
                     </tr>
                     {this.state.values.map((user)=>
                         <tr key={user.id} id={"row"+user.id}>
@@ -59,9 +58,6 @@ class Users extends SortableTable {
                             <td>{user.name}</td>
                             <td>
                                 {dateFormat(user.createdAt)}
-                            </td>
-                            <td>
-                                <NavLink to={"user/"+user.id}>Просмотр</NavLink>
                             </td>
                         </tr>                    
                     )}
