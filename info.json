@@ -1,100 +1,75 @@
 {
-    "courses":[
-        {
-            "id":"2",
-            "title":"Second course",
-            "createdAt":"2001-12-22",
-            "studentsNumber":2
-        },
-        {
-            "id":"1",
-            "title":"First course",
-            "createdAt":"2004-12-02",
-            "studentsNumber":2
-        },
-        {
-            "id":"3",
-            "title":"New course",
-            "createdAt":"2003-12-02",
-            "studentsNumber":2
-        },
-        {
-            "id":"4",
-            "title":"NEwNEW! course",
-            "createdAt":"2005-12-02",
-            "studentsNumber":12
-        }
-    ],
-    "users":[
-        {
-            "id":"2",
-            "name":"Jhon",
-            "createdAt":"2001-12-22"
-        },
-        {
-            "id":"1",
-            "name":"James",
-            "createdAt":"2003-11-22"
-        },
-        {
-            "id":"3",
-            "name":"Kirill",
-            "createdAt":"2004-12-25"
-        },
-        {
-            "id":"4",
-            "name":"Aaron",
-            "createdAt":"2007-12-15"
-        }
-    ],
-    "posts":[
-        {
-            "id":"1",
-            "text":"Its first Post!",
-            "createdAt":"2001-12-22",
-            "course":"1"
-        },
-        {
-            "id":"2",
-            "text":"Its Second Post!",
-            "createdAt":"2001-12-22",
-            "course":"1"
-        },
-        {
-            "id":"3",
-            "text":"Its 3rd Post!",
-            "createdAt":"2001-12-22",
-            "course":"1"
-        },
-        {
-            "id":"4",
-            "text":"Its 4th Post!",
-            "createdAt":"2001-12-22",
-            "course":"2"
-        },
-        {
-            "id":"5",
-            "text":"Its 5th Post!",
-            "createdAt":"2001-12-22",
-            "course":"3"
-        },
-        {
-            "id":"6",
-            "text":"Its 6th Post!",
-            "createdAt":"2001-12-22",
-            "course":"3"
-        },
-        {
-            "id":"7",
-            "text":"Its 7th Post!",
-            "createdAt":"2001-12-22",
-            "course":"4"
-        },
-        {
-            "id":"8",
-            "text":"Its 8th Post!",
-            "createdAt":"2001-12-22",
-            "course":"3"
-        }
-    ]      
+  "courses": [],
+  "users": [
+    {
+      "id": "2",
+      "name": "Jhon",
+      "createdAt": "2001-12-22"
+    },
+    {
+      "id": "1",
+      "name": "James",
+      "createdAt": "2003-11-22"
+    },
+    {
+      "id": "3",
+      "name": "Kirill",
+      "createdAt": "2004-12-25"
+    },
+    {
+      "id": "4",
+      "name": "Aaron",
+      "createdAt": "2007-12-15"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "text": "Its first Post!",
+      "createdAt": "2001-12-22",
+      "course": "1"
+    },
+    {
+      "id": "2",
+      "text": "Its Second Post!",
+      "createdAt": "2001-12-22",
+      "course": "1"
+    },
+    {
+      "id": "3",
+      "text": "Its 3rd Post!",
+      "createdAt": "2001-12-22",
+      "course": "1"
+    },
+    {
+      "id": "4",
+      "text": "Its 4th Post!",
+      "createdAt": "2001-12-22",
+      "course": "2"
+    },
+    {
+      "id": "5",
+      "text": "Its 5th Post!",
+      "createdAt": "2001-12-22",
+      "course": "3"
+    },
+    {
+      "id": "6",
+      "text": "Its 6th Post!",
+      "createdAt": "2001-12-22",
+      "course": "3"
+    },
+    {
+      "id": "7",
+      "text": "Its 7th Post!",
+      "createdAt": "2001-12-22",
+      "course": "4"
+    },
+    {
+      "id": "8",
+      "text": "Its 8th Post!",
+      "createdAt": "2001-12-22",
+      "course": "3"
+    }
+  ]
 }
