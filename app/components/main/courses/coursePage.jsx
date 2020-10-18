@@ -46,7 +46,6 @@ class CoursePage extends SortableTable {
         if (!this.state.values) {
             return <Loading/>
         }
-        console.log(this.state.selectedValuesIds);
         return(
             <div className='mainContainer'>
                 <CommandPanel 
